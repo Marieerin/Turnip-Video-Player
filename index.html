@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>JW Player Assessment</title>
+</head>
+
+<body>
+    <main>
+        <!-- Video Loading Form -->
+        <form action="" id="videoLoadingForm">
+            <legend>
+                Play a Video
+                <img src="./assets/turnip.png" id="turnip" alt="">
+            </legend>
+            <ul>
+                <li id="urlDiv">
+                    <label for="videoURL">URL</label>
+                    <input type="url" id="videoURL" value="https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4" required>
+                </li>
+                <li>
+                    <label for="videoWidth" title="Width in Pixels">Width</label>
+                    <input type="text" inputmode="numeric" id="videoWidth" value="640" title="Width in Pixels" required>
+                </li>
+                <li>
+                    <label for="videoHeight" title="Height in Pixels">Height</label>
+                    <input type="text" inputmode="numeric" id="videoHeight" value="360" title="Height in Pixels" required>
+                </li>
+                <li>
+                    <label for="autoplay" title="Set Autoplay?">Autoplay</label>
+                    <input type="checkbox" inputmode="numeric" id="autoplay" value="" title="Set Autoplay" >
+                </li>
+            </ul>
+    
+            <input type="submit" id="addVideoPlayer" value="Load Video">
+
+            <p id="ratioDisplay">
+                <!-- displays videoplayer viewability ratio -->
+            </p>
+            <p id="currentState">
+                <!-- displays video state -->
+
+            </p>
+        </form>
+        
+        <!-- Video Player Controls -->
+        <form action="" >
+            <fieldset id="formDisabler" disabled="true">
+                <ul id="videoPlayerControls">
+                    <li id="playButton" >
+                        <!-- pause/play -->
+                        <input type="checkbox" name="playPause" id="playPause" checked>
+                        <label for="playPause" class="accessibileInputLabel" title="Play/Pause">Play/Pause </label>
+                    </li>
+                    <li id="progressBar">
+                        <!-- progress -->
+                        <div class="track" id="track">
+                            <div id="progress">
+                                <!-- progress is visually displayed here -->
+                            </div>
+                        </div>
+                        <label for="progressBar" class="accessibileInputLabel">Progress</label>
+                        <span id="videoProgress">
+                            <!-- videoProgress goes here -->
+                            0 / 0
+                        </span>
+                    </li>
+                    <!-- Volume -->
+                    <li id="volumeBar">
+                        <input type="checkbox" id="mute" name="mute" checked='true'>
+                        <label for="mute" class="accessibileInputLabel" title="Mute">Mute</label>
+
+                        <label for="volume" aria-label="Volume" class="accessibileInputLabel">
+                            Volume </label>
+                        <input type="range" name="volume" id="volume" min="0" max="1" value='' step=".1">
+                    </li>
+                    <li id="fullscreenButton">
+                        <!-- fullscreen -->
+                        <input type="checkbox" name="fullscreen" id="fullscreen">
+                        <label for="fullscreen" class="accessibileInputLabel" aria-label="Fullscreen" title="Fullscreen">Fullscreen</label>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+
+        <!-- Video View Port -->
+        <div id="videoViewPort">
+            <div id="videoImportDiv">
+                <!-- video gets imported here -->
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
